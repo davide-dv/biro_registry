@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: registry
+
+
+server:
+  port: 9000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka
+    fetch-registry: true
+    registry-fetch-interval-seconds: 10
