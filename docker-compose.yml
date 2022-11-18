@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  discovery:
+    image: biro/discovery_app
+    ports:
+      - '8761:8761'
+
+  registry:
+    image: biro/registry_app
+    ports:
+      - '9000:9000'
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+        - database.env
+    volumes:
+        # execute script .sh or .sql at first run
+        - ./database/db_init.sql:/docker-entrypoint-initdb.d/db_init.sql
+        # save db data on host
+        - ./postgres-data:/var/lib/postgresql/data
+    ports:
+        - '5438:5432'
+
+#  log:
+#    image: biro/log_app
+#    ports:
+#      - '8080:8080'
