@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/company")
+@RequestMapping("/api/registry/company")
 public class CompanyController {
 
     @Autowired

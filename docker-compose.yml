@@ -1,14 +1,10 @@
 version: '3.7'
 services:
-  discovery:
-    image: biro/discovery_app
-    ports:
-      - '8761:8761'
 
   registry:
     image: biro/registry_app
     ports:
-      - '9000:9000'
+      - '8082:9000'
 
   db:
     image: postgres
@@ -21,7 +17,7 @@ services:
         # save db data on host
         - ./postgres-data:/var/lib/postgresql/data
     ports:
-        - '5438:5432'
+        - '5437:5432'
 
 #  log:
 #    image: biro/log_app
