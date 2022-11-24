@@ -12,3 +12,7 @@ eureka:
       defaultZone: http://discovery:8761/eureka
     fetch-registry: true
     registry-fetch-interval-seconds: 10
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
